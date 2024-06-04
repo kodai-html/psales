@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOthersTable extends Migration
+class CreateComparisonCriteriaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateOthersTable extends Migration
      */
     public function up()
     {
-        Schema::create('others', function (Blueprint $table) {
+        Schema::create('comparison_criteria', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('remarks');
+            $table->integer('company_id');
+            $table->integer('proposed_product_id');
+            $table->integer('proposed_product_detail_id');
+            $table->string('attribute');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateOthersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('others');
+        Schema::dropIfExists('comparison_criteria');
     }
 }
