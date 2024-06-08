@@ -12,4 +12,17 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import ComponentA from './components/ComponentA'; // ComponentAをインポート
+// import ComponentB from './components/ComponentB'; // ComponentBをインポート
+
+window.Chartist = require('chartist');
+
+// ReactDOM.render(
+//   <div>
+//     <ComponentA />
+//     <ComponentB />
+//   </div>,
+//   document.getElementById('app')
+// );

@@ -22,24 +22,30 @@ Route::get('/menu', function () {
     return view('main.menu');
 })->middleware(['auth'])->name('menu');
 
-Route::get('/own_register', [ProductController::class, 'showOwn'])->middleware('auth')->name('showOwnRegister');
+Route::get('/proposed_product_register', [ProductController::class, 'showProposedProduct'])->middleware('auth')->name('showProposedProductRegister');
 
-Route::post('/own_register', [ProductController::class, 'storeOwn'])->name('storeOwnRegister');
+Route::post('/proposed_product_register', [ProductController::class, 'storeProposedProduct'])->name('storeProposedProductRegister');
 
-Route::get('/other_register', [ProductController::class, 'showOther'])->middleware('auth')->name('showOtherRegister');
+Route::get('/compared_product_register', [ProductController::class, 'showComparedProduct'])->middleware('auth')->name('showComparedProductRegister');
 
-Route::post('/other_register', [ProductController::class, 'storeOther'])->name('storeOtherRegister');
+Route::post('/compared_product_register', [ProductController::class, 'storeComparedProduct'])->name('storeComparedProductRegister');
 
-Route::get('/own_edit', [ProductController::class, 'showOwnEdit'])->middleware('auth')->name('showOwnEdit');
+Route::get('/proposed_product_detail', [ProductController::class, 'showProposedProductDetail1'])->middleware('auth')->name('showProposedProductDetail1');
 
-Route::post('/own_edit', [ProductController::class, 'storeOwnEdit'])->name('storeOwnEdit');
+Route::post('/proposed_product_detail', [ProductController::class, 'showProposedProductDetail2'])->middleware('auth')->name('showProposedProductDetail2');
 
-Route::get('/other_edit', [ProductController::class, 'showOtherEdit'])->middleware('auth')->name('showOtherEdit');
+Route::get('/compared_product_detail', [ProductController::class, 'showComparedProductDetail1'])->middleware('auth')->name('showComparedProductDetail1');
 
-Route::post('/other_edit', [ProductController::class, 'storeOtherEdit'])->name('storeOtherEdit');
+Route::post('/compared_product_detail', [ProductController::class, 'showComparedProductDetail2'])->middleware('auth')->name('showComparedProductDetail2');
 
-Route::get('/compare', [ProductController::class, 'compare'])->name('compare');
+Route::post('/compared_product_confirm', [ProductController::class, 'showComparedProductConfirm'])->middleware('auth')->name('showComparedProductConfirm');
 
-Route::post('/add_record', [ProductController::class, 'addRecord'])->name('addRecord');
+Route::get('/proposed_product_continues', [ProductController::class, 'showProposedProductContinues'])->middleware('auth')->name('showProposedProductContinues');
+
+Route::post('/proposed_product_continues', [ProductController::class, 'storeProposedProductContinues'])->middleware('auth')->name('storeProposedProductContinues');
+
+Route::get('/choice', [ProductController::class, 'choice'])->middleware('auth')->name('choice');
+
+Route::POST('/compare', [ProductController::class, 'compare'])->middleware('auth')->name('compare');
 
 require __DIR__.'/auth.php';

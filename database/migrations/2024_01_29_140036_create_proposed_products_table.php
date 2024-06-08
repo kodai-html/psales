@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOwnDetailsTable extends Migration
+class CreateProposedProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateOwnDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('own_details', function (Blueprint $table) {
+        Schema::create('proposed_products', function (Blueprint $table) {
             $table->id();
-            $table->integer('owns_id');
-            $table->string('behavior');
-            $table->integer('type');
-            $table->integer('int_value');
-            $table->string('str_value');
+            $table->string('name');
+            $table->string('company_id');
             $table->string('remarks');
             $table->timestamps();
         });
@@ -32,6 +29,6 @@ class CreateOwnDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('own_details');
+        Schema::dropIfExists('proposed_products');
     }
 }

@@ -4,15 +4,19 @@
 
 @section('menu')
   <p>TOP MENU</p>
-  <a href="{{ route('showOwnRegister') }}">自社商品登録画面</a>
+  <a href="{{ route('showProposedProductRegister') }}" class='btn'>自社商品登録画面</a>
   <br>
-  <a href="{{ route('showOtherRegister') }}">他社商品登録画面</a>
+  <a href="{{ route('showComparedProductRegister') }}" class='btn'>他社商品登録画面</a>
   <br>
-  <a href="{{ route('showOwnEdit') }}">自社商品編集画面</a>
+  <a href="{{ route('showProposedProductDetail1') }}" class='btn'>自社商品編集画面</a>
   <br>
-  <a href="{{ route('showOtherEdit') }}">他社商品編集画面</a>
+  <a href="{{ route('showComparedProductDetail1') }}" class='btn'>他社商品編集画面</a>
   <br>
-  <a href="{{ route('compare') }}">商品比較画面</a>
+  <a href="{{ route('showProposedProductContinues') }}" class='btn'>自社商品チャート用データ登録画面</a>
+  <br>
+  {{-- <a href="{{ route('showComparedProductDetail1') }}" class='btn'>自社商品チャート用データ登録画面</a> --}}
+  <br>
+  <a href="{{ route('choice') }}" class='btn'>比較商品選択画面</a>
 
   <form method="POST" action="{{ route('logout') }}">
     @csrf
